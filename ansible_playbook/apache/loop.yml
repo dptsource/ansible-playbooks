@@ -1,0 +1,19 @@
+--- # Playbook to push MOTD File
+
+- hosts: centoswebservers
+  user: ansibleuser
+  sudo: yes
+
+  tasks:
+      - name: "Install Apache into Redhat servers"
+        yum: pkg={{item}} state=latest 
+        with_items:
+               - httpd
+               - links
+               - ntp
+               - nano
+
+
+
+
+

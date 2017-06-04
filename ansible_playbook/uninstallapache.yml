@@ -1,0 +1,29 @@
+--- # Playbook to install Apache with Conditions
+
+- hosts: all
+  user: ansibleuser
+  sudo: yes
+  gather_facts: true
+
+  tasks:
+      - name: "Install Apache into Redhat servers"
+        command: yum remove -y httpd
+        when: ansible_os_family == "RedHat"
+
+      - name: "Install Apache Ubuntu based servers"
+        command: apt-get remove -y apache2
+        when: ansible_os_family == "Debian"
+
+
+
+
+
+
+
+
+
+
+
+
+   
+

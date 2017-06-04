@@ -1,0 +1,20 @@
+- hosts: all
+  user: ansibleuser
+  sudo: yes
+  connection: ssh
+
+  vars:
+   passwd: $1$Somekey$h4GKFX.BkjXxrt4poX.fO/
+
+  tasks:
+   - name: "Creating users with encrypted passwords"
+     user: name={{item}} password={{passwd}}
+     with_items:
+            - keerthana
+            - vasi
+            - goutham
+            - anil
+
+     
+
+

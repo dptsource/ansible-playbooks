@@ -1,0 +1,8 @@
+
+- name: "Install Apache Ubuntu based servers"
+  command: apt-get install -y tomcat8
+  when: ansible_os_family == "Debian"
+ 
+- name: "Install Lynx web browser"
+  apt: name=lynx state=latest
+  when: ansible_os_family == "Debian"

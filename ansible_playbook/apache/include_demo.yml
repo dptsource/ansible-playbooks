@@ -1,0 +1,27 @@
+--- # Playbook to install Apache with Conditions
+
+- hosts: all
+  user: ansibleuser
+  sudo: yes
+  gather_facts: true
+
+  tasks:
+   - include: packages/packages.yml
+
+  handlers:
+   - include: handlers/handlers.yml
+
+
+
+
+
+
+
+
+
+
+
+
+
+   
+

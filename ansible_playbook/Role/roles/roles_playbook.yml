@@ -1,0 +1,12 @@
+--- # Creating a role in Ansible
+
+- hosts: all
+  user: ansibleuser
+  sudo: yes
+  
+
+  roles:
+    - webservers  
+    - appservers
+
+

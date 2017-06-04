@@ -1,0 +1,13 @@
+--- # Playbook to push MOTD File
+
+- hosts: all
+  user: ansibleuser
+  sudo: yes
+  connection: ssh
+
+  tasks:
+      - name: "Pushing MOTD File to all hosts"
+        copy: src=/home/ansibleuser/ansible_playbook/motd/motd dest=/etc/motd
+
+
+

@@ -1,0 +1,8 @@
+- name: "Install Apache into Redhat servers"
+  command: yum install -y httpd
+  when: ansible_os_family == "RedHat"
+  notify: Restart HTTPD   
+
+- name: "Install Apache Ubuntu based servers"
+  command: apt-get install -y apache2
+  when: ansible_os_family == "Debian"
